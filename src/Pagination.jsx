@@ -13,8 +13,6 @@ function Pagination(props) {
         <option value="range">5 Movies</option>
         <option value="saab">10 Movies</option>
       </select>
-      {/* <Pagination total={6}/> */}
-      {/* {props.children} */}
       <div className="pagination2">
         <span>
           Page {props.active} of {props.totalPages}:
@@ -23,6 +21,5 @@ function Pagination(props) {
       </div>
     </div>
   );
-}
-
+  }
 export default Pagination;
