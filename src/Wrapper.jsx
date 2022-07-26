@@ -409,14 +409,6 @@ function Wrapper(props) {
               </div>
 
               {props.children}
-              <div className="topbar-filter">
-                <label>Movies per page:</label>
-                <select>
-                  <option value="range">5 Movies</option>
-                  <option value="saab">10 Movies</option>
-                </select>
-                <Pagination/>
-              </div>
             </div>
             <div className="col-md-4 col-sm-12 col-xs-12">
               <div className="sidebar">

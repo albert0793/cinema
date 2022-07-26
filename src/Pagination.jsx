@@ -1,24 +1,28 @@
-import { useState } from 'react';
-import Movies from './Movies.json';
 function Pagination(props) {
-    const totalMovies = Movies.length;
-    const [active, setActive] = useState(1);
-    const getTotalLinks = () => {
-        let links = [];
-        for (let i = 1; i <= totalMovies; i++) {
-            links.push(<a className={i == active ? 'active' : ''} onClick={()=> setActive(i)}>
-            {i}
-          </a>);
-        }
-        return links;
+  const getTotalLinks = () => {
+    let links = [];
+    for (let i = 1; i <= props.totalPages; i++) {
+      links.push(<a className={i == props.active ? "active" : ""} onClick={()=>props.onChange(i)}>{i}</a>);
     }
+    return links;
+  };
   return (
-    <div className="pagination2">
-      <span>Page {active} of { totalMovies }:</span>
-      { getTotalLinks() }
+    <div className="topbar-filter">
+      <label>Movies per page:</label>
+      <select>
+        <option value="range">5 Movies</option>
+        <option value="saab">10 Movies</option>
+      </select>
+      {/* <Pagination total={6}/> */}
+      {/* {props.children} */}
+      <div className="pagination2">
+        <span>
+          Page {props.active} of {props.totalPages}:
+        </span>
+        {getTotalLinks()}
+      </div>
     </div>
   );
 }
-
 
 export default Pagination;
